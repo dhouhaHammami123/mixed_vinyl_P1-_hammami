@@ -24,21 +24,21 @@
 				<div class="row">
 					{% for mix in pager %}
 						<div class="col col-md-4">
-							<a href="{{ path('app_mix_show', { slug: mix.slug }) }}" class="mixed-vinyl-container p-3 text-center">
-								<img src="{{ mix.getImageUrl(300) }}" alt="Mix album cover">
-								<p class="mt-2">
+							<img src="{{ mix.getImageUrl(300) }}" alt="Mix album cover">
+							<p class="mt-2">
+								<a href="{{ path('app_mix_show', { slug: mix.slug }) }}" class="mixed-vinyl-container p-3 text-center">
 									<strong>{{ mix.title }}</strong>
-								</p>
-								<span>{{ mix.trackCount }}
-									Tracks</span>
-								|
-								<span>{{ mix.genre }}</span>
-							
-								<span>{{ mix.createdAt|ago}}</span>
-						
-								{{ mix.votesString }}
-								votes
-							</a>
+								</a>
+							</p>
+							<span>{{ mix.trackCount }}
+								Tracks</span>
+							|
+							<span>{{ mix.genre }}</span>
+							|
+							<span>{{ mix.createdAt|ago }}</span>
+							<br>
+							{{ mix.votesString }}
+							votes
 						</div>
 					{% endfor %}
 
